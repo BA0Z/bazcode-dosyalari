@@ -1,0 +1,17 @@
+{
+  "banner": {
+    "show": true,
+    "title": "BazCode Dünyasına Hoş Geldiniz!",
+    "text": "İlk eklentimizi kurduğunuz için teşekkürler.",
+    "btn_text": "Web Sitemiz",
+    "link": "https://github.com/BA0Z"
+  },
+  "products": {
+    "baz-whatsapp": {
+      "name": "BazCode WhatsApp",
+      "desc": "Müşterilerinizle tek tıkla iletişim kurun.",
+      "url": "https://github.com/BA0Z",
+      "icon": "dashicons-whatsapp"
+    }
+  }
+}
