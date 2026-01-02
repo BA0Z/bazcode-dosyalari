@@ -1,6 +1,223 @@
-.baz-wrap { max-width: 1000px; margin: 20px; font-family: sans-serif; }
-.baz-header { background: #fff; padding: 20px; border-left: 5px solid #2271b1; margin-bottom: 20px; }
-.baz-banner { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: #fff; padding: 20px; border-radius: 8px; display: flex; justify-content: space-between; align-items: center; }
-.baz-btn-banner { background: #fff; color: #764ba2; padding: 10px 20px; text-decoration: none; border-radius: 5px; font-weight: bold; }
-.baz-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; margin-top: 20px; }
-.baz-card { background: #fff; padding: 20px; border: 1px solid #ddd; }
+/* --- GENEL AYARLAR & FONTLAR --- */
+.baz-wrap {
+    max-width: 1200px;
+    margin: 30px auto;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #3c434a;
+}
+
+.baz-wrap * {
+    box-sizing: border-box;
+}
+
+/* --- HEADER ALANI --- */
+.baz-header {
+    background: #ffffff;
+    padding: 30px 40px;
+    border-radius: 16px;
+    margin-bottom: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+    border: 1px solid #f0f0f1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Header soluna küçük bir marka çizgisi */
+.baz-header::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 6px;
+    background: #7F56D9; /* Marka Rengi (Mor) */
+}
+
+.baz-header h1 {
+    font-size: 28px;
+    font-weight: 800;
+    color: #101828;
+    margin: 0;
+    letter-spacing: -0.5px;
+}
+
+/* --- BANNER ALANI (Gradient & Modern) --- */
+.baz-banner {
+    background: linear-gradient(135deg, #7F56D9 0%, #53389E 100%);
+    color: #ffffff;
+    padding: 40px;
+    border-radius: 16px;
+    margin-bottom: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 20px 40px -10px rgba(83, 56, 158, 0.4);
+    position: relative;
+}
+
+.baz-banner h2 {
+    font-size: 24px;
+    font-weight: 700;
+    margin: 0 0 10px 0;
+    color: #ffffff;
+}
+
+.baz-banner p {
+    font-size: 16px;
+    opacity: 0.9;
+    margin: 0;
+    max-width: 600px;
+    line-height: 1.5;
+}
+
+.baz-btn-banner {
+    background: #ffffff;
+    color: #7F56D9;
+    padding: 14px 28px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 15px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    white-space: nowrap;
+}
+
+.baz-btn-banner:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    background: #f9f5ff;
+}
+
+/* --- BÖLÜM BAŞLIKLARI --- */
+.baz-section-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #667085;
+    margin: 40px 0 20px 0;
+    display: block;
+    border-bottom: 2px solid #f2f4f7;
+    padding-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* --- GRID YAPISI --- */
+.baz-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 25px;
+    margin-bottom: 40px;
+}
+
+/* --- KART TASARIMI --- */
+.baz-card {
+    background: #ffffff;
+    border: 1px solid #eaecf0;
+    border-radius: 12px;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.02);
+}
+
+.baz-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 30px -10px rgba(0, 0, 0, 0.1);
+    border-color: #d6bbfb;
+}
+
+/* Yüklü Kartlar İçin Özel Stil */
+.baz-card.installed {
+    border-top: 4px solid #12b76a; /* Yeşil */
+    background: linear-gradient(to bottom, #f6fef9 0%, #ffffff 100%);
+}
+
+.baz-card h3 {
+    margin: 0 0 15px 0;
+    font-size: 18px;
+    font-weight: 700;
+    color: #101828;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.baz-card h3 .dashicons {
+    font-size: 24px;
+    width: 24px;
+    height: 24px;
+    color: #7F56D9; /* İkon rengi */
+}
+.baz-card.installed h3 .dashicons {
+    color: #12b76a; /* Yüklü ise yeşil ikon */
+}
+
+.baz-card p {
+    color: #667085;
+    font-size: 14px;
+    line-height: 1.6;
+    margin: 0 0 20px 0;
+    flex-grow: 1;
+}
+
+/* --- BADGE (ETİKET) --- */
+.baz-badge {
+    background: #ecfdf3;
+    color: #027a48;
+    padding: 4px 12px;
+    border-radius: 16px;
+    font-size: 12px;
+    font-weight: 600;
+    border: 1px solid #d1fadf;
+    margin-left: auto;
+}
+
+/* --- BUTONLAR --- */
+.baz-card-footer {
+    margin-top: auto;
+    padding-top: 20px;
+    border-top: 1px solid #f2f4f7;
+    text-align: right;
+}
+
+.button-baz {
+    display: inline-block;
+    padding: 10px 18px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s;
+    cursor: pointer;
+}
+
+/* İncele Butonu (Outline) */
+.button-baz {
+    background: #fff;
+    color: #344054;
+    border: 1px solid #d0d5dd;
+    box-shadow: 0 1px 2px rgba(16, 24, 40, 0.05);
+}
+.button-baz:hover {
+    background: #f9fafb;
+    border-color: #b2ccff;
+    color: #101828;
+}
+
+/* Ayarlar Butonu (Primary) */
+.button-baz.primary {
+    background: #12b76a;
+    color: #ffffff;
+    border: 1px solid #12b76a;
+    box-shadow: 0 1px 2px rgba(16, 24, 40, 0.05);
+}
+.button-baz.primary:hover {
+    background: #039855;
+    border-color: #039855;
+    color: #fff;
+}
